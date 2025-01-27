@@ -32,9 +32,9 @@ return { -- Autoformat
 		end,
 		formatters_by_ft = {
 			lua = { "stylua" },
-			javascript = { "prettierd" },
-			javascriptreact = { "prettierd" },
-			typescript = { "prettierd" },
+			javascript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
 		},
 	},
