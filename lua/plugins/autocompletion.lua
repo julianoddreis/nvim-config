@@ -40,8 +40,8 @@ return { -- Autocompletion
 			},
 			completion = { completeopt = "menu,menuone,noinsert" },
 			mapping = cmp.mapping.preset.insert({
-				["<Tab>"] = cmp.mapping.select_next_item(),
-				["<S-Tab>"] = cmp.mapping.select_prev_item(),
+				["<Down>"] = cmp.mapping.select_next_item(),
+				["<Up>"] = cmp.mapping.select_prev_item(),
 
 				-- Scroll the documentation window [b]ack / [f]orward
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -94,20 +94,20 @@ return { -- Autocompletion
 
 		-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 		cmp.setup.cmdline({ "/", "?" }, {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
-				{ name = "buffer" },
-			},
+			mapping = cmp.mapping.preset.cmdline({
+				["<Down>"] = { c = cmp.mapping.select_next_item() },
+				["<Up>"] = { c = cmp.mapping.select_prev_item() },
+			}),
+			sources = { { name = "buffer" } },
 		})
 
 		-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = "path" },
-			}, {
-				{ name = "cmdline" },
+			mapping = cmp.mapping.preset.cmdline({
+				["<Down>"] = { c = cmp.mapping.select_next_item() },
+				["<Up>"] = { c = cmp.mapping.select_prev_item() },
 			}),
+			sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
 		})
 	end,
 }
