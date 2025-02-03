@@ -36,6 +36,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.api.nvim_set_keymap("n", "[b", ":bprevious<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "]b", ":bnext<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "<C-[>", "<C-o>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-]>", "<C-i>", { noremap = true, silent = true })
+
 vim.keymap.set("n", "<C-left>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-right>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-down>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
