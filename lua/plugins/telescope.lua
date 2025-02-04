@@ -53,6 +53,16 @@ return {
 			pickers = {
 				find_files = {
 					hidden = true,
+					path_display = function(opts, path)
+						local tail = require("telescope.utils").path_tail(path)
+						return string.format("%s (%s)", tail, path)
+					end,
+				},
+				buffers = {
+					path_display = function(opts, path)
+						local tail = require("telescope.utils").path_tail(path)
+						return string.format("%s (%s)", tail, path)
+					end,
 				},
 			},
 			extensions = {
