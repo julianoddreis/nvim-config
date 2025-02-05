@@ -22,6 +22,8 @@ return {
 	config = function()
 		-- [[ Configure Telescope ]]
 		-- See `:help telescope` and `:help telescope.setup()`
+		local actions = require("telescope.actions")
+
 		require("telescope").setup({
 			pickers = {
 				buffers = {
@@ -40,6 +42,14 @@ return {
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
+				},
+			},
+			defaults = {
+				mappings = {
+					n = { -- Modo normal
+						["d"] = actions.delete_buffer,
+						["x"] = actions.delete_buffer,
+					},
 				},
 			},
 		})
