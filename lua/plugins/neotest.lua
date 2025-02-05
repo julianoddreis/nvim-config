@@ -29,8 +29,16 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>t", function()
-			require("neotest").watch.watch(vim.fn.expand("%"))
+		vim.keymap.set("n", "<leader>tr", function()
+			require("neotest").run.run(vim.fn.expand("%"))
+		end)
+
+		vim.keymap.set("n", "<leader>to", function()
+			require("neotest").output.open()
+		end)
+
+		vim.keymap.set("n", "<leader>ts", function()
+			require("neotest").summary.toggle()
 		end)
 	end,
 }
