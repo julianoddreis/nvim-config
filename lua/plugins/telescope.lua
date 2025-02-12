@@ -38,6 +38,18 @@ return {
 						return string.format("%s (%s)", tail, path)
 					end,
 				},
+				live_grep = {
+					path_display = function(opts, path)
+						local tail = require("telescope.utils").path_tail(path)
+						return string.format("%s (%s)", tail, path)
+					end,
+				},
+				lsp_references = {
+					path_display = function(opts, path)
+						local tail = require("telescope.utils").path_tail(path)
+						return string.format("%s (%s)", tail, path)
+					end,
+				},
 			},
 			extensions = {
 				["ui-select"] = {
