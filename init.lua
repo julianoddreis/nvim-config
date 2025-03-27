@@ -25,7 +25,6 @@ vim.opt.splitbelow = true
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
-
 -- Decrease update time
 vim.opt.updatetime = 250
 
@@ -57,5 +56,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- remap 'c' e 'C' to not afect the clipboard (using the black hole register)
+vim.keymap.set("n", "c", '"_c', { noremap = true })
+vim.keymap.set("n", "C", '"_C', { noremap = true })
+vim.keymap.set("v", "c", '"_c', { noremap = true })
+
+-- avoid that 'p' on visual mode override the clipboard
+vim.keymap.set("v", "p", '"_dP', { noremap = true })
 
 require("config.lazy")
