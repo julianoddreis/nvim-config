@@ -38,6 +38,7 @@ return { -- Autoformat
 			typescriptreact = { "eslint_d" },
 			css = { "prettier" },
 			scss = { "prettier" },
+			json = { "fixjson" },
 		},
 	},
 }
