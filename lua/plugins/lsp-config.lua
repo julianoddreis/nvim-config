@@ -194,6 +194,7 @@ return {
 				-- ts_ls = {},
 				eslint = {},
 				fixjson = {},
+				stylelint = {},
 				--
 				--
 				lua_ls = {
