@@ -55,9 +55,9 @@ return {
 				},
 				indent = {
 					indent_size = 2,
-					padding = 1, -- extra padding on left hand side
+					padding = 0, -- extra padding on left hand side
 					-- indent guides
-					with_markers = true,
+					with_markers = false,
 					indent_marker = "│",
 					last_indent_marker = "└",
 					highlight = "NeoTreeIndentMarker",
