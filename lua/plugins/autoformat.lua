@@ -32,13 +32,14 @@ return { -- Autoformat
 		end,
 		formatters_by_ft = {
 			lua = { "stylua" },
-			javascript = { "eslint" },
-			javascriptreact = { "eslint" },
-			typescript = { "eslint" },
-			typescriptreact = { "eslint" },
+			javascript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
 			css = { "stylelint" },
 			scss = { "stylelint" },
 			json = { "fixjson" },
 		},
 	},
 }
+

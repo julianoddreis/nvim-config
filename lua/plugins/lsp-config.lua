@@ -241,10 +241,34 @@ return {
 						-- by the server configuration above. Useful when disabling
 						-- certain features of an LSP (for example, turning off formatting for ts_ls)
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
+						vim.lsp.config(server_name, server)
 					end,
 				},
 			})
+
+			-- Enable ESLint with auto-fix on save
+			vim.lsp.config("eslint", {
+				on_attach = function(client, bufnr)
+					-- Auto-fix on save using LSP code actions
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						buffer = bufnr,
+						callback = function()
+							-- Execute ESLint code actions to fix issues
+							if client.supports_method("textDocument/codeAction") then
+								vim.lsp.buf.code_action({
+									context = { only = { "source.fixAll.eslint" } },
+									apply = true,
+								})
+							end
+						end,
+					})
+				end,
+				settings = {
+					workingDirectory = { mode = "auto" },
+				},
+			})
+
+
 		end,
 	},
 }
