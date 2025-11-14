@@ -32,7 +32,7 @@ return {
 						return string.format("%s (%s)", tail, path)
 					end,
 				},
-				git_files = {
+				find_files = {
 					path_display = function(opts, path)
 						local tail = require("telescope.utils").path_tail(path)
 						return string.format("%s (%s)", tail, path)
@@ -74,7 +74,7 @@ return {
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
-		vim.keymap.set("n", "<leader>ff", builtin.git_files, { desc = "[F]ind [F]iles" })
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
 		vim.keymap.set("n", "<leader>fs", builtin.builtin, { desc = "[F]ind [S]elect Telescope" })
 		vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind current [W]ord" })
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })

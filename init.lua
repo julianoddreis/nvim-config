@@ -11,6 +11,8 @@ vim.g.have_nerd_font = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.opt.cmdheight = 0 -- Remove a área de comando (Neovim 0.8+)
+vim.opt.laststatus = 3
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
@@ -25,6 +27,7 @@ vim.opt.splitbelow = true
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
+
 -- Decrease update time
 vim.opt.updatetime = 250
 
