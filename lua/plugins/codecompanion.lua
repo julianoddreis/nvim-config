@@ -12,12 +12,10 @@ return {
 			chat = {
 				window = {
 					layout = "vertical", -- vertical, horizontal, float
-					relative = "editor",
 					opts = {
 						number = false,
 						relativenumber = false,
-						cursorline = true,
-						winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
+						cursorline = false,
 					},
 				},
 				intro_message = "Welcome to CodeCompanion! How can I help you today?",
@@ -65,9 +63,13 @@ return {
 				end,
 			},
 		},
+		extensions = {
+			spinner = {},
+		},
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
+		"franco-ruggeri/codecompanion-spinner.nvim",
 	},
 }
